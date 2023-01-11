@@ -50,3 +50,8 @@ class UsersById(Resource):
         result = [dict(zip(tuple(query.keys()), i)) for i in query.cursor]
         return jsonify(result)
 
+api.add_resource(Users, '/users')
+api.add_resource(UsersById, '/users/<id>')
+
+if __name__ == "__main__":
+    app.run()
